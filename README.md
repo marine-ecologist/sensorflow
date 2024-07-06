@@ -1,7 +1,17 @@
-# sensorflow
-Arduino code repository for flow sensor development for tilt meters using an Arduino Feather ESP32 S3 and 9-axis IMU (LIS3MDL/LSM6DS3TRC).
+#sensorflow
 
+Arduino code repository for flow sensor development (tilt meters) using an Arduino Feather ESP32 S3 and 9-axis IMU (LIS3MDL/LSM6DS3TRC).
 
+## Dev .ino files:
+[ESP32_TFT_NE_bearing.ino](https://github.com/marine-ecologist/sensorflow/blob/main/ESP32_TFT_NE_bearing.ino)
+
+<img src=https://github.com/marine-ecologist/sensorflow/assets/93563980/e8062c60-246c-48fd-962e-ce51cd6ec3f9 width=300>
+
+[ESP32_TFT_pitch_roll_yaw.ino](https://github.com/marine-ecologist/sensorflow/blob/main/ESP32_TFT_pitch_roll_yaw.ino)
+
+<img src=https://github.com/marine-ecologist/sensorflow/assets/93563980/12be611f-35cd-4336-8bef-010d3033674d width=300>
+
+# Hardware notes
 
 ##  LIS3MDL (Magnetometer)
 
