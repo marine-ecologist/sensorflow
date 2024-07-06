@@ -98,11 +98,19 @@ The data rate determines how frequently the sensor takes measurements and provid
 	•	LSM6DS_RATE_6_66K_HZ (6.66 KHz): The gyroscope takes 6660 measurements per second.
 
 
+# Comparison of FXOS8700CQ and LSM6DS3TR-C + LIS3MDL
 
+### datasheets
+- [FXOS8700CQ](https://www.nxp.com/docs/en/data-sheet/FXOS8700CQ.pdf)
+- [lis3mdl](https://www.st.com/resource/en/datasheet/lis3mdl.pdf)
+- [LSM6DS3TR-C](https://www.st.com/resource/en/datasheet/lsm6ds3tr-c.pdf)
 
-# Comparison between FXOS8700CQ and LSM6DS3TR-C + LIS3MDL
-
-| Sensor                | Type                                      | Accelerometer Range    | Accelerometer Power Consumption | Gyroscope Range                           | Gyroscope Power Consumption | Magnetometer Range               | Magnetometer Power Consumption | Total Power Consumption |
-|-----------------------|-------------------------------------------|------------------------|---------------------------------|-------------------------------------------|-----------------------------|-----------------------------------|---------------------------------|-------------------------|
-| FXOS8700CQ            | 6-axis (Accelerometer + Magnetometer)     | ±2g, ±4g, ±8g          | 150 µA                          | N/A                                       | N/A                         | ±1200 µT                          | 180 µA                          | 330 µA                  |
-| LSM6DS3TR-C + LIS3MDL | 9-axis (Accelerometer + Gyroscope + Magnetometer) | ±2g, ±4g, ±8g, ±16g    | 600 µA                          | ±125, ±245, ±500, ±1000, ±2000 dps        | 1.4 mA                      | ±4, ±8, ±12, ±16 gauss            | 650 µA                          | 2.65 mA                 |
+| Specification                        | FXOS8700CQ                                              | LSM6DS3TR-C + LIS3MDL                                   |
+|--------------------------------------|---------------------------------------------------------|--------------------------------------------------------|
+| **Type**                             | 6-axis (Accelerometer + Magnetometer)                   | 9-axis (Accelerometer + Gyroscope + Magnetometer)      |
+| **Accelerometer Range**              | ±2g, ±4g, ±8g                                           | ±2g, ±4g, ±8g, ±16g                                    |
+| **Gyroscope Range**              | ±2g, ±4g, ±8g                                           | ±2g, ±4g, ±8g, ±16g                                    |
+| **Magnetometer Range**               | ±4, ±8, ±12 gauss                                            | ±4, ±8, ±12, ±16 gauss                                  |
+| **Magnetometer Sensitivity**              | 4096, 2048, 2014 (LSB/g)                                            | 6482, 3421, 2281, 1711  (LSB/g)|
+| **Power Consumption (low power mode)**                | 8 µA (accel), 40 µA (magnetometer)                   | 9 µA (accel), 40 µA (magnetometer)             |
+| **Output Data Rate (Accel/Magnetometer)** | 800 Hz / 400 Hz                                          | 1600 Hz / 1000 Hz                                      |
