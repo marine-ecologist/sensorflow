@@ -2,10 +2,12 @@
 Arduino code repository for flow sensor development
 
 
+## LSM6DS3TRC
 
-# LSM6DSL notes:
 
-## Full-Scale Acceleration Range
+## LSM6DSL 
+
+### Full-Scale Acceleration Range
 
 The full-scale acceleration range indicates the maximum and minimum values that the accelerometer can measure:
 
@@ -17,7 +19,7 @@ The full-scale acceleration range indicates the maximum and minimum values that 
 g (gravity) is the unit of acceleration due to gravity, approximately equal to 9.81 m/s². Therefore, in the ±2 g range, the accelerometer can measure accelerations up to about ±19.62 m/s².
 
 
-## Angular Rate Range
+### Angular Rate Range
 
 The angular rate range indicates the maximum and minimum values that the gyroscope can measure:
 
