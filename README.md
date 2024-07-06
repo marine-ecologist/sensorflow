@@ -1,15 +1,44 @@
 # sensorflow
 
-Arduino code repository for drag-tilt current meter development using an [Arduino Feather ESP32 S3](https://learn.adafruit.com/adafruit-esp32-s3-tft-feather/overview) and 9-axis IMU ([LIS3MDL](https://learn.adafruit.com/lis3mdl-triple-axis-magnetometer/overview)/[LSM6DS3TRC](https://learn.adafruit.com/adafruit-lsm6ds3tr-c-6-dof-accel-gyro-imu/overview)).
+**Aim**: 
 
-Aim: develop an inexpensive (<$50) open source drag-tilt meter (competitive prices $600-2500 USD)
-Innovations: 
-- 9-axis IMU for sensor fusion (magnetometer, accelerometer, gyroscope)
-- Kalman filtering to update the state estimate for tilt angles and angular velocities, improving the accuracy of measurements in the presence of noise and disturbances
+Develop an inexpensive (<$50) open source drag-tilt meter (competitive prices $600-2500 USD). Current instruments are 6-axis IMU, SD card reader, USB-B data transfer
+
+**Features** (implemented): 
+
+- 9-axis IMU for sensor fusion (magnetometer, accelerometer, gyroscope) & temperature (°C)
+- TFT screen with real-time sensor updates
+- Onboard SD card 
+- Bluetooth connectivity (data transfer, serial port)
+- USB C connector
+- Temperature recording
+- Low power mode
+- Open-source code base
+  
+**Improvements** (to be implemented): 
+
+- Kalman filtering to update the state estimate for tilt angles and angular velocities to improve measurement accuracy under noise and disturbances
 - Self calibrating using gyroscopic measurements
+- Variable height measurements?  e.g. 30cm, 60cm, 100cm
+- Inductive charging?
+- LoRaWAN surface connectivity to create networks
 
- 
+**Current hardware**: 
+- Development board: [Arduino Feather ESP32 S3 TFT](https://learn.adafruit.com/adafruit-esp32-s3-tft-feather/overview) 
+- 9-axis IMU: ([LIS3MDL](https://learn.adafruit.com/lis3mdl-triple-axis-magnetometer/overview)/[LSM6DS3TRC](https://learn.adafruit.com/adafruit-lsm6ds3tr-c-6-dof-accel-gyro-imu/overview)).
+- RTC / SD card: ([Adalogger Featherwing](https://learn.adafruit.com/adafruit-adalogger-featherwing/using-the-real-time-clock))
 
+## Dev .ino files:
+[ESP32_TFT_NE_bearing.ino](https://github.com/marine-ecologist/sensorflow/blob/main/ESP32_TFT_NE_bearing.ino)
+
+<img src=https://github.com/marine-ecologist/sensorflow/assets/93563980/e8062c60-246c-48fd-962e-ce51cd6ec3f9 width=300>
+
+[ESP32_TFT_pitch_roll_yaw.ino](https://github.com/marine-ecologist/sensorflow/blob/main/ESP32_TFT_pitch_roll_yaw.ino)
+
+<img src=https://github.com/marine-ecologist/sensorflow/assets/93563980/12be611f-35cd-4336-8bef-010d3033674d width=300>
+
+
+# Development Notes
 
 Contributions of a Gyroscope in a Drag-Tilt Current Meter
 
@@ -31,15 +60,6 @@ Contributions of a Gyroscope in a Drag-Tilt Current Meter
 	 - Offset Storage: Store these average values as the zero-point offsets.
 	 - Calibration Application: Subtract these offsets from future gyroscope readings to correct for the bias and obtain accurate angular velocity measurements.
  
-
-## Dev .ino files:
-[ESP32_TFT_NE_bearing.ino](https://github.com/marine-ecologist/sensorflow/blob/main/ESP32_TFT_NE_bearing.ino)
-
-<img src=https://github.com/marine-ecologist/sensorflow/assets/93563980/e8062c60-246c-48fd-962e-ce51cd6ec3f9 width=300>
-
-[ESP32_TFT_pitch_roll_yaw.ino](https://github.com/marine-ecologist/sensorflow/blob/main/ESP32_TFT_pitch_roll_yaw.ino)
-
-<img src=https://github.com/marine-ecologist/sensorflow/assets/93563980/12be611f-35cd-4336-8bef-010d3033674d width=300>
 
 # Hardware notes
 
