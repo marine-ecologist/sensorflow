@@ -6,22 +6,22 @@ Develop an inexpensive (<$50) open source drag-tilt meter (competitive prices $6
 
 **Features** (implemented): 
 
-- 9-axis IMU for sensor fusion (magnetometer, accelerometer, gyroscope) & temperature (°C)
+- 9-axis IMU for sensor fusion (magnetometer, accelerometer, gyroscope) & temperature (±0.05 °C)
 - TFT screen with real-time sensor updates
 - Onboard SD card 
 - Bluetooth connectivity (data transfer, serial port)
 - USB C connector
-- Temperature recording
 - Low power mode
 - Open-source code base
   
 **Improvements** (to be implemented): 
 
 - Kalman filtering to update the state estimate for tilt angles and angular velocities to improve measurement accuracy under noise and disturbances
-- Self calibrating using gyroscopic measurements
+- Switch units on/off using hall effect sensor ([US5881LUA](https://www.adafruit.com/product/158))
+- Include gyroscope into self-calibrating in zero flow environments
 - Variable height measurements?  e.g. 30cm, 60cm, 100cm
 - Inductive charging?
-- LoRaWAN surface connectivity to create networks
+- LoRaWAN surface connectivity to create networks?
 
 **Current hardware**: 
 - Development board: [Arduino Feather ESP32 S3 TFT](https://learn.adafruit.com/adafruit-esp32-s3-tft-feather/overview) 
@@ -29,14 +29,11 @@ Develop an inexpensive (<$50) open source drag-tilt meter (competitive prices $6
 - RTC / SD card: ([Adalogger Featherwing](https://learn.adafruit.com/adafruit-adalogger-featherwing/using-the-real-time-clock))
 
 ## Dev .ino files:
-[ESP32_TFT_NE_bearing.ino](https://github.com/marine-ecologist/sensorflow/blob/main/ESP32_TFT_NE_bearing.ino)
-
-<img src=https://github.com/marine-ecologist/sensorflow/assets/93563980/e8062c60-246c-48fd-962e-ce51cd6ec3f9 width=300>
-
-[ESP32_TFT_pitch_roll_yaw.ino](https://github.com/marine-ecologist/sensorflow/blob/main/ESP32_TFT_pitch_roll_yaw.ino)
-
-<img src=https://github.com/marine-ecologist/sensorflow/assets/93563980/12be611f-35cd-4336-8bef-010d3033674d width=300>
-
+| File | Image |
+|------|-------|
+| [ESP32_TFT_NE_bearing.ino](https://github.com/marine-ecologist/sensorflow/blob/main/ESP32_TFT_NE_bearing.ino) | <img src=https://github.com/marine-ecologist/sensorflow/assets/93563980/e8062c60-246c-48fd-962e-ce51cd6ec3f9 width=300> |
+| [ESP32_TFT_pitch_roll_yaw.ino](https://github.com/marine-ecologist/sensorflow/blob/main/ESP32_TFT_pitch_roll_yaw.ino) | <img src=https://github.com/marine-ecologist/sensorflow/assets/93563980/12be611f-35cd-4336-8bef-010d3033674d width=300> |
+| [LIS3MDL magnetometer calibration](https://github.com/marine-ecologist/sensorflow/blob/main/LIS3MDL_calibration.ino) | |
 
 # Development Notes
 
