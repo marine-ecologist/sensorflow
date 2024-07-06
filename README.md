@@ -1,6 +1,6 @@
 # sensorflow
 
-Arduino code repository for flow sensor development (tilt meters) using an Arduino Feather ESP32 S3 and 9-axis IMU (LIS3MDL/LSM6DS3TRC).
+Arduino code repository for flow sensor development (tilt meters) using an [Arduino Feather ESP32 S3](https://learn.adafruit.com/adafruit-esp32-s3-tft-feather/overview) and 9-axis IMU ([LIS3MDL](https://learn.adafruit.com/lis3mdl-triple-axis-magnetometer/overview)/[LSM6DS3TRC](https://learn.adafruit.com/adafruit-lsm6ds3tr-c-6-dof-accel-gyro-imu/overview)).
 
 ## Dev .ino files:
 [ESP32_TFT_NE_bearing.ino](https://github.com/marine-ecologist/sensorflow/blob/main/ESP32_TFT_NE_bearing.ino)
@@ -97,3 +97,12 @@ The data rate determines how frequently the sensor takes measurements and provid
 	•	LSM6DS_RATE_3_33K_HZ (3.33 KHz): The gyroscope takes 3330 measurements per second.
 	•	LSM6DS_RATE_6_66K_HZ (6.66 KHz): The gyroscope takes 6660 measurements per second.
 
+
+
+
+# Comparison between FXOS8700CQ and LSM6DS3TR-C + LIS3MDL
+
+| Sensor                | Type                                      | Accelerometer Range    | Accelerometer Power Consumption | Gyroscope Range                           | Gyroscope Power Consumption | Magnetometer Range               | Magnetometer Power Consumption | Total Power Consumption |
+|-----------------------|-------------------------------------------|------------------------|---------------------------------|-------------------------------------------|-----------------------------|-----------------------------------|---------------------------------|-------------------------|
+| FXOS8700CQ            | 6-axis (Accelerometer + Magnetometer)     | ±2g, ±4g, ±8g          | 150 µA                          | N/A                                       | N/A                         | ±1200 µT                          | 180 µA                          | 330 µA                  |
+| LSM6DS3TR-C + LIS3MDL | 9-axis (Accelerometer + Gyroscope + Magnetometer) | ±2g, ±4g, ±8g, ±16g    | 600 µA                          | ±125, ±245, ±500, ±1000, ±2000 dps        | 1.4 mA                      | ±4, ±8, ±12, ±16 gauss            | 650 µA                          | 2.65 mA                 |
