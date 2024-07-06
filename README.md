@@ -1,6 +1,36 @@
 # sensorflow
 
-Arduino code repository for flow sensor development (tilt meters) using an [Arduino Feather ESP32 S3](https://learn.adafruit.com/adafruit-esp32-s3-tft-feather/overview) and 9-axis IMU ([LIS3MDL](https://learn.adafruit.com/lis3mdl-triple-axis-magnetometer/overview)/[LSM6DS3TRC](https://learn.adafruit.com/adafruit-lsm6ds3tr-c-6-dof-accel-gyro-imu/overview)).
+Arduino code repository for drag-tilt current meter development using an [Arduino Feather ESP32 S3](https://learn.adafruit.com/adafruit-esp32-s3-tft-feather/overview) and 9-axis IMU ([LIS3MDL](https://learn.adafruit.com/lis3mdl-triple-axis-magnetometer/overview)/[LSM6DS3TRC](https://learn.adafruit.com/adafruit-lsm6ds3tr-c-6-dof-accel-gyro-imu/overview)).
+
+Aim: develop an inexpensive (<$50) open source drag-tilt meter (competitive prices $600-2500 USD)
+Innovations: 
+- 9-axis IMU for sensor fusion (magnetometer, accelerometer, gyroscope)
+- Kalman filtering to update the state estimate for tilt angles and angular velocities, improving the accuracy of measurements in the presence of noise and disturbances
+- Self calibrating using gyroscopic measurements
+
+ 
+
+
+Contributions of a Gyroscope in a Drag-Tilt Current Meter
+
+1. Calibration: In still water conditions, the gyroscope can help define the zero point by calibrating the sensor to account for any inherent drift or bias. This ensures that the tilt measurements are accurate and start from a known reference point.
+2. Dynamic Tilt Correction: The gyroscope can detect and compensate for sudden movements or vibrations that may temporarily affect the tilt angle. This helps in filtering out noise and ensuring that the tilt measurements accurately reflect the steady-state current flow.
+3. Enhanced Sensor Fusion: The gyroscope works in conjunction with the accelerometer to provide a more comprehensive understanding of the instrument’s orientation. While the accelerometer measures static tilt due to gravity, the gyroscope measures dynamic tilt caused by rotational movements.
+3. Compensating for Accelerometer Limitations: Accelerometers can be affected by linear accelerations and vibrations, which can introduce errors in tilt measurements. The gyroscope helps to correct these errors by providing rotational data that can be used to differentiate between tilt and linear motion.
+
+##### Gyroscope:
+- A gyroscope measures angular velocity around three axes (x, y, and z).
+- In still water conditions, ideally, the gyroscope should read near-zero values because there should be no rotation or angular movement of the sensor.
+- Using the gyroscope to define the zero point in still water conditions is an effective way to calibrate the sensor for accurate angular velocity measurements to ensure precise and reliable motion tracking and orientation determination.
+- Defining the Zero Point:
+	- Calibration: In still water, you can calibrate the gyroscope to determine its zero point. This involves taking a series of readings over a period of time and averaging them to find the baseline offset for each axis.
+	- Baseline Offset: The baseline offset (zero point) represents the small bias or drift in the gyroscope readings when there is no actual rotation. This offset needs to be subtracted from future readings to get accurate angular velocity measurements.
+- Steps to Define the Zero Point:
+	 - Data Collection: Place the IMU in still water and collect gyroscope data for a certain period.
+	 - Average Calculation: Calculate the average reading for each of the three axes (x, y, and z). This average represents the bias or drift in the gyroscope.
+	 - Offset Storage: Store these average values as the zero-point offsets.
+	 - Calibration Application: Subtract these offsets from future gyroscope readings to correct for the bias and obtain accurate angular velocity measurements.
+ 
 
 ## Dev .ino files:
 [ESP32_TFT_NE_bearing.ino](https://github.com/marine-ecologist/sensorflow/blob/main/ESP32_TFT_NE_bearing.ino)
