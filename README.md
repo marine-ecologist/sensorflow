@@ -1,8 +1,6 @@
 # sensorflow
 
-**Aim**: 
-
-Develop an inexpensive (<$50) open source drag-tilt meter (competitive prices $600-2500 USD). Current instruments are 6-axis IMU, SD card reader, USB-B data transfer
+Development of inexpensive (<$50) open source drag-tilt meters. Current instruments are 6-axis IMU, SD card reader USB-B data transfer ($600-2500 USD per unit)
 
 **Features** (implemented): 
 
@@ -10,8 +8,8 @@ Develop an inexpensive (<$50) open source drag-tilt meter (competitive prices $6
 - TFT screen with real-time sensor updates
 - Onboard SD card 
 - Bluetooth connectivity (data transfer, serial port)
-- USB C connector
-- Low power mode
+- USB-C 
+- Low power mode (3.7V 1100mAh Li-ion battery) 
 - Open-source code base
   
 **Improvements** (to be implemented): 
