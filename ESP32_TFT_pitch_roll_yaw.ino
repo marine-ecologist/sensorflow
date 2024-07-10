@@ -119,7 +119,7 @@ void setup(void) {
   case LSM6DS_GYRO_RANGE_250_DPS:
     Serial.println("250 degrees/s");
     break;
-  case  :
+  case  LSM6DS_GYRO_RANGE_500_DPS:
     Serial.println("500 degrees/s");
     break;
   case LSM6DS_GYRO_RANGE_1000_DPS:
