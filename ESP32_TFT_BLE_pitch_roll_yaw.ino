@@ -1,6 +1,6 @@
 #include <Wire.h>
-#include <Adafruit_GFX.h>    // Core graphics library
-#include <Adafruit_ST7789.h> // Hardware-specific library for ST7789
+#include <Adafruit_GFX.h>
+#include <Adafruit_ST7789.h>
 #include <Adafruit_LIS3MDL.h>
 #include <Adafruit_LSM6DS3TRC.h>
 #include <SPI.h>
@@ -29,6 +29,7 @@ class MyServerCallbacks: public BLEServerCallbacks {
 
     void onDisconnect(BLEServer* pServer) {
       deviceConnected = false;
+      BLEDevice::startAdvertising(); // Restart advertising when a device disconnects
     }
 };
 
@@ -153,11 +154,28 @@ void loop() {
   pitch *= 180.0 / PI;
   roll *= 180.0 / PI;
 
+  // Debug: Print values to Serial Monitor
+  Serial.print("Pitch: "); Serial.print(pitch, 2);
+  Serial.print(" Roll: "); Serial.print(roll, 2);
+  Serial.print(" Yaw: "); Serial.print(yaw, 2);
+  Serial.print(" Temp: "); Serial.println(temp.temperature, 2);
+
   // Update BLE characteristics
   if (deviceConnected) {
-    pPitchCharacteristic->setValue(pitch);
-    pRollCharacteristic->setValue(roll);
-    pYawCharacteristic->setValue(yaw);
+    // Convert float to string with 2 decimal places
+    char pitchStr[8], rollStr[8], yawStr[8];
+    dtostrf(pitch, 6, 2, pitchStr);
+    dtostrf(roll, 6, 2, rollStr);
+    dtostrf(yaw, 6, 2, yawStr);
+    
+    // Debug: Print the strings to Serial Monitor
+    Serial.print("PitchStr: "); Serial.print(pitchStr);
+    Serial.print(" RollStr: "); Serial.print(rollStr);
+    Serial.print(" YawStr: "); Serial.println(yawStr);
+
+    pPitchCharacteristic->setValue(pitchStr);
+    pRollCharacteristic->setValue(rollStr);
+    pYawCharacteristic->setValue(yawStr);
 
     pPitchCharacteristic->notify();
     pRollCharacteristic->notify();
@@ -198,7 +216,6 @@ void loop() {
   tft.print("Temp: ");
   tft.setTextColor(ST77XX_WHITE, ST77XX_BLACK);
   tft.print(temp.temperature, 2);
-
 
   // Delay before next reading
   delay(200);
