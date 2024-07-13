@@ -1,8 +1,13 @@
 # sensorflow
 
-Development of inexpensive (<$50) open source drag-tilt meters. Current instruments are 6-axis IMU, SD card reader USB-B data transfer ($600-2500 USD per unit)
+Development of inexpensive (<$50) open source drag-tilt meters. 
 
-**Features** (implemented): 
+![ezgif-7-f0e0b36f14](https://github.com/user-attachments/assets/833a05e3-8168-440a-9594-928a44c8534e)
+
+Available instruments are $600-2500 USD per unit (6-axis IMU, SD card reader USB-B data transfer)
+
+
+### Features (implemented): 
 
 - 9-axis IMU for sensor fusion (magnetometer, accelerometer, gyroscope) & temperature (±0.05 °C)
 - TFT screen with real-time sensor updates
@@ -12,7 +17,7 @@ Development of inexpensive (<$50) open source drag-tilt meters. Current instrume
 - Low power mode (3.7V 1100mAh Li-ion battery) 
 - Open-source code base
   
-**Improvements** (to be implemented): 
+### Improvements (to be implemented): 
 
 - Kalman filtering to update the state estimate for tilt angles and angular velocities to improve measurement accuracy under noise and disturbances
 - Switch units on/off using hall effect sensor ([US5881LUA](https://www.adafruit.com/product/158))
@@ -21,7 +26,7 @@ Development of inexpensive (<$50) open source drag-tilt meters. Current instrume
 - Inductive charging?
 - LoRaWAN surface connectivity to create networks?
 
-**Current hardware**: 
+#Hardware*: 
 - Development board: [Arduino Feather ESP32 S3 TFT](https://learn.adafruit.com/adafruit-esp32-s3-tft-feather/overview) 
 - 9-axis IMU: ([LIS3MDL](https://learn.adafruit.com/lis3mdl-triple-axis-magnetometer/overview)/[LSM6DS3TRC](https://learn.adafruit.com/adafruit-lsm6ds3tr-c-6-dof-accel-gyro-imu/overview)).
 - RTC / SD card: ([Adalogger Featherwing](https://learn.adafruit.com/adafruit-adalogger-featherwing/using-the-real-time-clock))
@@ -32,6 +37,8 @@ Development of inexpensive (<$50) open source drag-tilt meters. Current instrume
 | [ESP32_TFT_NE_bearing.ino](https://github.com/marine-ecologist/sensorflow/blob/main/ESP32_TFT_NE_bearing.ino) | <img src=https://github.com/marine-ecologist/sensorflow/assets/93563980/e8062c60-246c-48fd-962e-ce51cd6ec3f9 width=300> |
 | [ESP32_TFT_pitch_roll_yaw.ino](https://github.com/marine-ecologist/sensorflow/blob/main/ESP32_TFT_pitch_roll_yaw.ino) | <img src=https://github.com/marine-ecologist/sensorflow/assets/93563980/12be611f-35cd-4336-8bef-010d3033674d width=300> |
 | [LIS3MDL magnetometer calibration](https://github.com/marine-ecologist/sensorflow/blob/main/LIS3MDL_calibration.ino) | |
+
+# Visualisation tools
 
 # Development Notes
 
