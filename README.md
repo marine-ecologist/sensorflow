@@ -23,8 +23,8 @@ Available instruments are $600-2500 USD per unit (6-axis IMU, SD card reader USB
 - Switch units on/off using hall effect sensor ([US5881LUA](https://www.adafruit.com/product/158))
 - Include gyroscope into self-calibrating in zero flow environments
 - Variable height measurements?  e.g. 30cm, 60cm, 100cm
-- Inductive charging?
-- LoRaWAN surface connectivity to create networks?
+- Inductive charging
+- [LoRaWAN surface connectivity to create sensornetworks](https://core-electronics.com.au/adafruit-feather-32u4-rfm96w-lora-radio-433mhz.html) & surface solar charging
 
 #Hardware*: 
 - Development board: [Arduino Feather ESP32 S3 TFT](https://learn.adafruit.com/adafruit-esp32-s3-tft-feather/overview) 
