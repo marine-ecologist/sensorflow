@@ -17,7 +17,7 @@ Available instruments are $600-2500 USD per unit (6-axis IMU, SD card reader USB
 - Low power mode (3.7V 1100mAh Li-ion battery) 
 - Open-source code base
   
-### Improvements (to be implemented): 
+### Development list (to be implemented): 
 
 - Kalman filtering to update the state estimate for tilt angles and angular velocities to improve measurement accuracy under noise and disturbances
 - Switch units on/off using hall effect sensor ([US5881LUA](https://www.adafruit.com/product/158))
@@ -25,6 +25,7 @@ Available instruments are $600-2500 USD per unit (6-axis IMU, SD card reader USB
 - Variable height measurements?  e.g. 30cm, 60cm, 100cm
 - Inductive charging
 - [LoRaWAN surface connectivity to create sensornetworks](https://core-electronics.com.au/adafruit-feather-32u4-rfm96w-lora-radio-433mhz.html) & surface solar charging
+- [4G connectivity](https://www.adafruit.com/product/3027)
 
 #Hardware*: 
 - Development board: [Arduino Feather ESP32 S3 TFT](https://learn.adafruit.com/adafruit-esp32-s3-tft-feather/overview) 
